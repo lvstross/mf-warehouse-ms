@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "wms_customers",
-      filename: "remoteEntry.js",
+      filename: "customers_remoteEntry.js",
       remotes: {},
       exposes: {
         "./Customers": "./src/customers/Customers"

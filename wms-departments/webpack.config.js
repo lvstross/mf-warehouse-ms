@@ -42,9 +42,11 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "wms_departments",
-      filename: "remoteEntry.js",
+      filename: "departments_remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Departments": "./src/departments/Departments",
+      },
       shared: {
         ...deps,
         react: {

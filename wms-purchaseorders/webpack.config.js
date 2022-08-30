@@ -42,9 +42,11 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "wms_purchaseorders",
-      filename: "remoteEntry.js",
+      filename: "purchaseorders_remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./PurchaseOrders": "./src/purchaseorders/PurchaseOrders",
+      },
       shared: {
         ...deps,
         react: {

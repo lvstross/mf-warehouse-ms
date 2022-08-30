@@ -1,0 +1,39 @@
+name: deploy-host
+
+on:
+  release:
+    types: [published]
+
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'wms-host/**'
+
+defaults:
+  run:
+    working-directory: wms-host
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run build
+
+      - uses: lvstross/do-space-sync-action@master
+        with:
+          args: --acl public-read
+        env:
+          SOURCE_DIR: './wms-host/dist'
+          SPACE_NAME: ${{ secrets.SPACE_NAME }}/wms-host/latest
+          SPACE_REGION: ${{ secrets.SPACE_REGION}}
+          SPACE_ACCESS_KEY_ID: ${{ secrets.SPACE_ACCESS_KEY_ID }}
+          SPACE_SECRET_ACCESS_KEY: ${{ secrets.SPACE_SECRET_ACCESS_KEY }}

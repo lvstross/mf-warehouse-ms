@@ -29,7 +29,7 @@
     "routers": "yarn workspace wms-routers",
     "store": "yarn workspace wms-store",
     "vendors": "yarn workspace wms-vendors",
-    "clean": "rm -rf node_modules wms-customers/node_modules wms-departments/node_modules wms-host/node_modules wms-inventory/node_modules wms-invoices/node_modules wms-products/node_modules wms-purchaseorders/node_modules wms-purchases/node_modules wms-routers/node_modules wms-store/node_modules wms-vendors/node_modules && yarn"
+    "clean": "rm -rf node_modules wms-customers/node_modules wms-departments/node_modules wms-host/node_modules wms-inventory/node_modules wms-invoices/node_modules wms-products/node_modules wms-purchaseorders/node_modules wms-purchases/node_modules wms-routers/node_modules wms-store/node_modules wms-vendors/node_modules"
   },
   "keywords": [],
   "author": "Levi Gonzales",

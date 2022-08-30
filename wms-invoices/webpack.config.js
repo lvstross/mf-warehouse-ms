@@ -42,9 +42,11 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "wms_invoices",
-      filename: "remoteEntry.js",
+      filename: "invoices_remoteEntry.js",
       remotes: {},
-      exposes: {},
+      exposes: {
+        "./Invoices": "./src/invoices/Invoices",
+      },
       shared: {
         ...deps,
         react: {

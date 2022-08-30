@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "mf-warehouse-ms",
+  "version": "1.0.0",
+  "description": "Warehouse Management System - Microfrontends",
+  "workspaces": {
+    "packages": [
+      "wms-customers",
+      "wms-departments",
+      "wms-host",
+      "wms-inventory",
+      "wms-invoices",
+      "wms-products",
+      "wms-purchaseorders",
+      "wms-routers",
+      "wms-store",
+      "wms-vendors"
+    ]
+  },
+  "scripts": {
+    "customers": "yarn workspace wms-customers",
+    "departments": "yarn workspace wms-departments",
+    "host": "yarn workspace wms-host",
+    "inventory": "yarn workspace wms-inventory",
+    "invoices": "yarn workspace wms-invoices",
+    "products": "yarn workspace wms-products",
+    "purchaseorders": "yarn workspace wms-purchaseorders",
+    "purchases": "yarn workspace wms-purchases",
+    "routers": "yarn workspace wms-routers",
+    "store": "yarn workspace wms-store",
+    "vendors": "yarn workspace wms-vendors",
+    "clean": "rm -rf node_modules wms-customers/node_modules wms-departments/node_modules wms-host/node_modules wms-inventory/node_modules wms-invoices/node_modules wms-products/node_modules wms-purchaseorders/node_modules wms-purchases/node_modules wms-routers/node_modules wms-store/node_modules wms-vendors/node_modules && yarn"
+  },
+  "keywords": [],
+  "author": "Levi Gonzales",
+  "license": "MIT"
+}

@@ -1,0 +1,152 @@
+version: '3'
+services:
+  wms-host:
+    container_name: wms-host
+    restart: always
+    depends_on:
+      - wms-store
+    build:
+      context: ./wms-host/.
+    ports:
+      - "3000:3000"
+    volumes:
+       - ./wms-host:/usr/src/app/wms-host
+       - /usr/src/app/wms-host/node_modules
+
+  wms-store:
+    container_name: wms-store
+    restart: always
+    build:
+      context: ./wms-store/.
+    ports:
+      - "3001:3001"
+    volumes:
+       - ./wms-store:/usr/src/app/wms-store
+       - /usr/src/app/wms-store/node_modules
+
+  wms-customers:
+    container_name: wms-customers
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-customers/.
+    ports:
+      - "3003:3003"
+    volumes:
+       - ./wms-customers:/usr/src/app/wms-customers
+       - /usr/src/app/wms-customers/node_modules
+
+  wms-departments:
+    container_name: wms-departments
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-departments/.
+    ports:
+      - "3006:3006"
+    volumes:
+       - ./wms-departments:/usr/src/app/wms-departments
+       - /usr/src/app/wms-departments/node_modules
+
+  wms-inventory:
+    container_name: wms-inventory
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-inventory/.
+    ports:
+      - "3008:3008"
+    volumes:
+       - ./wms-inventory:/usr/src/app/wms-inventory
+       - /usr/src/app/wms-inventory/node_modules
+
+  wms-invoices:
+    container_name: wms-invoices
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-invoices/.
+    ports:
+      - "3004:3004"
+    volumes:
+       - ./wms-invoices:/usr/src/app/wms-invoices
+       - /usr/src/app/wms-invoices/node_modules
+
+  wms-products:
+    container_name: wms-products
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-products/.
+    ports:
+      - "3002:3002"
+    volumes:
+       - ./wms-products:/usr/src/app/wms-products
+       - /usr/src/app/wms-products/node_modules
+
+  wms-purchaseorders:
+    container_name: wms-purchaseorders
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-purchaseorders/.
+    ports:
+      - "3007:3007"
+    volumes:
+       - ./wms-purchaseorders:/usr/src/app/wms-purchaseorders
+       - /usr/src/app/wms-purchaseorders/node_modules
+
+
+  wms-purchases:
+    container_name: wms-purchases
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-purchases/.
+    ports:
+      - "3010:3010"
+    volumes:
+       - ./wms-purchases:/usr/src/app/wms-purchases
+       - /usr/src/app/wms-purchases/node_modules
+
+  wms-routers:
+    container_name: wms-routers
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-routers/.
+    ports:
+      - "3005:3005"
+    volumes:
+       - ./wms-routers:/usr/src/app/wms-routers
+       - /usr/src/app/wms-routers/node_modules
+
+  wms-vendors:
+    container_name: wms-vendors
+    restart: always
+    depends_on:
+      - wms-host
+      - wms-store
+    build:
+      context: ./wms-vendors/.
+    ports:
+      - "3009:3009"
+    volumes:
+       - ./wms-vendors:/usr/src/app/wms-vendors
+       - /usr/src/app/wms-vendors/node_modules

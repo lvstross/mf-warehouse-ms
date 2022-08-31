@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -29,7 +30,7 @@ const App = () => (
         <Route path="/purchases" element={<Purchases />} />
         <Route path="/routers" element={<Routers />} />
         <Route path="/vendors" element={<Vendors />} />
-        {/* <Route path="*" element={<Pages.NoPage />} /> */}
+        {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
     </BrowserRouter>
   </div>

@@ -16,6 +16,10 @@ Project root will serve on `http://localhost:3000/`. The root of the application
 
 What this will do is open a terminal window for every MF and start their respective webpack servers. Same as before, the project root will serve on `http://localhost:3000/`.
 
+## Hybrid development approach
+
+If you are makeing updates to a particular MF, you can initialize the whole project with docker compose and stop the container of the MF that you're working on and then start that MF without docker so that you can get live updates. This is true with any MF that you're working on in tandem with the rest of the MFs running in docker.
+
 ## Project Goals
 - [X] Set up module federation project development with docker.
 - [ ] Set up shared `redux` store between microfrontends.
